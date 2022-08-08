@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ola Ajibola | JavScript Projects</title>
+
+        <style>
+            body{
+                margin: 0px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-weight: lighter;
+                background-color: whitesmoke;
+                color: white;
+            }
+            header{
+                background:  #42484d;
+                text-align: center;
+                padding: 1rem;
+                padding-left: 3rem;
+                padding-right: 3rem;
+                height: 30vh;
+                display: grid;
+                align-items: center;
+                transition: all 1s;
+            }
+            header.active-color, footer.active-color{
+                background: #aaa;
+            }
+            h1{
+                margin: 0px;
+                font-size: 3rem;
+                font-weight: lighter;
+            }
+            h2{
+                font-size: 2rem;
+                font-weight: lighter; 
+            }
+            header p{
+                color: rgb(234, 234, 234);
+            }
+            .description{
+                transition: ease-in-out 0.5s;
+            }
+            .hidden{
+                transform: translateY(4rem);
+                opacity: 0%;
+            }
+            main{
+                background:#aaa;
+                display: grid;
+                padding: 2rem;
+                justify-items: center;
+                align-items: center;
+                grid-template-columns: 1fr 1fr;
+                height: 60vh;
+            }
+            img{
+                height: 10rem;
+                margin-bottom: 2rem;
+            }
+            main a{
+                background: #42484d;
+                padding: 2rem;
+                border-radius: 0.5rem;
+                color: inherit;
+                width: 80%;
+                height: 80%;
+                display: grid;
+                justify-items: center;
+                text-align: center;
+                align-items: center;
+                text-decoration: none;
+            }
+            main a:hover{
+                transition: all 1s;
+                background: #626b72;
+            }
+            footer{
+                background:  #42484d;                
+                text-align: center;
+                padding: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>JavaScript Projects</h1>
+            <p>The following projects were created used during Ola Ajibola's advanced JavaScript classes. While the projects are owned by Jonas Schmedtmann (The JavaScript tutor), all JavaScript was done by Ola Ajibola, including some minor additions to improve the projects.</p>
+        </header>
+        <main>
+            <a href="mapty/index.html"><div id="mapty">
+                <img src="map-log.png">
+                <p class="description hidden">
+                    Mapty is a simple web app that allows it's users to keep records of excersises e.g cycling, running, with a map that shows the locations of set activity.
+                </p>
+            </div></a>
+            <a href="bankist/index.html"><div id="bankist">
+                <img src="nab-log.png">
+                <p class="description hidden">
+                    The Bankist web page is a beautiful one, made to apply modern, efficient DOM manipulation with JavaScript.
+                </p>
+            </div></a>
+        </main>
+        <footer>
+            2022 | Ola K. Ajibola
+        </footer>
+        <script>
+            const divs = document.querySelectorAll("a");
+            divs.forEach(div => {
+                div.addEventListener("mouseenter", function() {
+                    div.querySelector(".description").classList.remove("hidden");
+                    document.querySelector("header").classList.add("active-color");
+                    document.querySelector("footer").classList.add("active-color");
+                });
+                div.addEventListener("mouseleave", function() {
+                    document.querySelector("header").classList.remove("active-color");
+                    document.querySelector("footer").classList.remove("active-color");
+                })
+            });
+        </script>
+    </body>
+</html>
